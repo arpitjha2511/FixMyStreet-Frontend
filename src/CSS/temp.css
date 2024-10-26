@@ -1,0 +1,75 @@
+/* Global CSS */
+
+body {
+  background-color: #181818; /* Dark background */
+  color: #fff; /* Default text color */
+}
+
+.navbar, .btn-group-toggle .btn, .card, .btn {
+  background-color: #333; /* Dark background for navbar, buttons, and cards */
+  border-color: #444; /* Slightly darker border color */
+  color: #fff; /* White text for buttons and card titles */
+}
+
+.card-body, .btn:hover {
+  background-color: #444; /* Darker background for card body and button hover */
+}
+
+.navbar .searchbar {
+  color: #fff; /* White text for search bar */
+}
+
+.container {
+  max-width: 1200px; /* Max width for containers */
+  margin: 0 auto; /* Center the container */
+  padding: 20px; /* Padding for the container */
+}
+
+.page-title {
+  font-size: 1.8rem; /* Title size */
+  font-weight: bold; /* Bold title */
+  text-align: center; /* Centered title */
+  margin-bottom: 20px; /* Bottom margin for spacing */
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border: none; /* No border */
+  transition: transform 0.2s, box-shadow 0.2s; /* Smooth transitions */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.card-title {
+  font-size: 1.2rem; /* Title size */
+  font-weight: bold; /* Bold title */
+}
+
+.card-text {
+  color: #aaa; /* Slightly lighter text color for card text */
+}
+
+.btn-group {
+  display: flex; /* Flex display for button group */
+  justify-content: center; /* Center the buttons */
+  margin-bottom: 20px; /* Bottom margin for spacing */
+}
+
+/* Additional styles for UserPotholes component */
+.text-white {
+  color: white; /* White text color */
+}
+
+.neon-shadow {
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.7), 0 0 30px rgba(0, 255, 255, 0.5); /* Initial neon glow */
+}
+
+.card.neon-shadow {
+  background-color: #2a2a2a; /* Specific dark background for neon cards */
+}
+
+.card.neon-shadow:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.7), 0 0 30px rgba(0, 255, 255, 0.5); /* Neon glow on hover */
+}

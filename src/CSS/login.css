@@ -1,0 +1,29 @@
+.container {
+    background-color: #181818;
+    padding: 20px;
+  }
+  
+  .card {
+    background-color: #333;
+    border: none;
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  h1, h3 {
+    font-family: 'Arial', sans-serif; /* Change to your desired bold font */
+    font-weight: bold;
+  }
+  
+  h5 {
+    font-style: italic;
+    color: #ccc; /* Adjust for contrast */
+  }
+  
+  .text-danger {
+    color: red;
+  }
+  
