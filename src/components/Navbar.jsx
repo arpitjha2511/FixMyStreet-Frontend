@@ -1,9 +1,18 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import '../CSS/navbar.css'; // Import the new CSS file
 
 function Navbar() {
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Hide navbar on the login screen
+  if (location.pathname === '/') return null;
+
+  const handleLogout = () => {
+    navigate('/');
+  };
 
   const handleSearch = () => {
     if (searchTerm.trim()) {
@@ -26,7 +35,7 @@ function Navbar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        
+  
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
@@ -38,30 +47,39 @@ function Navbar() {
             <li className="nav-item">
               <a className="nav-link" href="/source-code">Source Code</a>
             </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/">Logout</a>
+            </li>
           </ul>
-          <form
-            className="d-flex"
-            onSubmit={(e) => {
-              e.preventDefault();
-              handleSearch();
-            }}
-          >
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search by user name"
-              aria-label="Search"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-            <button className="btn btn-outline-light" type="submit">
-              Search
-            </button>
-          </form>
+  
+          {/* Search Form and Logout Button on the right */}
+          <div className="d-flex align-items-center ms-auto">
+            <form
+              className="d-flex me-2"
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleSearch();
+              }}
+            >
+              <input
+                className="form-control me-2"
+                type="search"
+                placeholder="Search by name"
+                aria-label="Search"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+              <button className="btn btn-outline-light" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </nav>
   );
+  
+  
 }
 
 export default Navbar;

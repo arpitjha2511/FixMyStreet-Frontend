@@ -1,29 +1,102 @@
-.container {
-    background-color: #181818;
-    padding: 20px;
-  }
-  
-  .card {
-    background-color: #333;
-    border: none;
-    transition: transform 0.2s;
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-  }
-  
-  h1, h3 {
-    font-family: 'Arial', sans-serif; /* Change to your desired bold font */
-    font-weight: bold;
-  }
-  
-  h5 {
-    font-style: italic;
-    color: #ccc; /* Adjust for contrast */
-  }
-  
-  .text-danger {
-    color: red;
-  }
-  
+/* Specific styles for the login page */
+body.login-page {
+  background-color: #101010; /* Dark background for login screen */
+  color: white; /* Default text color */
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+  font-family: Arial, sans-serif; /* Set a default font */
+}
+
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full height */
+}
+
+.login-left {
+  max-width: 40%; /* Limit width for left panel */
+  text-align: left; /* Align text to the left */
+}
+
+.login-title {
+  font-weight: bold;
+  font-size: 3rem; /* Large font size */
+  color: hsl(0, 0%, 100%); /* White color for the title */
+}
+
+.login-subtitle {
+  font-style: italic;
+  font-size: 1.5rem; /* Smaller than title */
+  margin-top: 0.5rem; /* Spacing */
+  color: hsl(0, 0%, 100%); /* White color for the subtitle */
+}
+
+.login-authors {
+  margin-top: 1rem; /* Spacing */
+}
+
+.login-heading {
+  font-weight: bold;
+  color: #ffffff; /* Cyan color for the heading */
+}
+
+/* Custom styles for inputs */
+.login-input {
+  background-color: #333; /* Dark background for input */
+  color: white; /* White text color */
+  border: 1px solid #444; /* Dark border */
+  border-radius: 5px; /* Rounded corners for inputs */
+}
+
+.login-input::placeholder {
+  color: #bbb; /* Lighter placeholder color */
+}
+
+/* Login box styling */
+.login-box {
+  width: 320px; /* Fixed width */
+  background-color: #222; /* Dark background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 
+    0 0 5px rgba(0, 255, 255, 0.3),  /* Adjusted shadow */
+    0 0 10px rgba(0, 255, 255, 0.2);  /* Adjusted shadow */
+  padding: 20px; /* Add padding */
+  position: relative; /* Position relative for pseudo-element */
+  transition: transform 0.2s ease; /* Smooth transition for scale */
+}
+
+/* Pseudo-element for extra glow effect */
+.login-box::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 15px; /* Rounded corners to match the card */
+  box-shadow: 0 0 5px rgba(0, 255, 255, 0.3),  /* Adjusted outer glow size */
+              0 0 10px rgba(0, 255, 255, 0.2);  /* Adjusted outer glow size */
+  z-index: -1; /* Behind the card */
+}
+
+/* Scale effect for login box on hover */
+.login-box:hover {
+  transform: scale(1.03); /* Scale on hover */
+  transform-origin: center; /* Scale from the center */
+}
+
+/* Button styles */
+.login-button {
+  background-color: #00b3b3; /* Default cyan color */
+  padding: 10px 20px; /* Add padding */
+  border: none; /* Remove border */
+  color: white; /* White text */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+}
+
+.login-button:hover {
+  background-color: #00b3b3; /* Darker cyan on hover */
+  transform: scale(1.03); /* Slightly larger on hover */
+  transform-origin: center; /* Scale from the center */
+}

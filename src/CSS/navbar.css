@@ -1,0 +1,27 @@
+/* Override styles specifically for the navbar */
+.navbar .navbar-collapse {
+    display: flex !important; /* Ensure flex display */
+    justify-content: space-between; /* Space between left and right items */
+  }
+  
+  .navbar .navbar-nav {
+    margin-right: auto; /* Push the items to the left */
+  }
+  
+  .navbar .form-control {
+    width: auto; /* Prevent it from stretching */
+  }
+  
+  /* Additional styling to override global styles */
+  .login-page .navbar {
+    justify-content: flex-start; /* Align items to the start */
+  }
+  
+    /* Additional styling for the search input */
+    .form-control {
+        border: 2px solid #00d1d1; /* Teal border for the search input */
+        border-radius: 5px; /* Rounded corners */
+        padding: 10px; /* Add padding */
+        transition: border-color 0.3s ease; /* Smooth transition */
+      }
+  
