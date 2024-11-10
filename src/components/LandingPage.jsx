@@ -11,7 +11,7 @@ function PotholeList() {
   useEffect(() => {
     const fetchPotholes = async () => {
       setLoading(true);
-      // const baseUrl = 'https://pumped-enough-newt.ngrok-free.app';
+      // const baseUrl = 'wildcat-mint-actually.ngrok-free.app';
       const baseUrl = 'http://localhost:3000';
       const endpointMap = {
         getAllCases: '/getAllCases',
@@ -97,6 +97,7 @@ function PotholeList() {
                 )}
                 <div className="card-body">
                   <h5 className="card-title">Address: {pothole.address}</h5>
+                  <h5 className="card-text">Threat Level: {pothole.threat}</h5>
                   <p className="card-text">Latitude: {pothole.latitude}</p>
                   <p className="card-text">Longitude: {pothole.longitude}</p>
                   <p className="card-text">Submitted By: {pothole.submittedBy}</p>

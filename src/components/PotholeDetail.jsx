@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-
+import resolveIcon from '../assets/resolve-icon.png';
+import mapIcon from '../assets/map-icon.png';
 function PotholeDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ function PotholeDetail() {
     const fetchPothole = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`https://pumped-enough-newt.ngrok-free.app/getPotholeById/${id}`, {
+        const response = await fetch(`http://localhost:3000/getPotholeById/${id}`, {
           headers: { 'ngrok-skip-browser-warning': 'true' },
         });
         if (!response.ok) throw new Error(`Error: ${response.status}`);
@@ -31,7 +32,7 @@ function PotholeDetail() {
 
   const handleMarkAsResolved = async () => {
     try {
-      const response = await fetch(`https://pumped-enough-newt.ngrok-free.app/markAsResolved/${id}`, {
+      const response = await fetch(`https://wildcat-mint-actually.ngrok-free.app/markAsResolved/${id}`, {
         method: 'PUT',
         headers: { 'ngrok-skip-browser-warning': 'true' },
       });
@@ -61,15 +62,30 @@ function PotholeDetail() {
               <p>No image available</p>
             )}
             <p><strong>Address:</strong> {pothole.address}</p>
+            <p><strong>Threat Level:</strong> {pothole.threat}</p>
             <p><strong>Latitude:</strong> {pothole.latitude}</p>
             <p><strong>Longitude:</strong> {pothole.longitude}</p>
             <p><strong>Submitted By:</strong> {pothole.submittedBy}</p>
             <p><strong>Resolved:</strong> {pothole.resolved ? 'Yes' : 'No'}</p>
-            {!pothole.resolved && (
-              <button className="btn btn-primary mt-3" onClick={handleMarkAsResolved}>
-                Mark as Resolved
-              </button>
-            )}
+            <div className="button-container">
+    <a
+        href={`https://www.google.com/maps/place/${pothole.latitude},${pothole.longitude}`}
+        className="btn btn-outline-success btn-lg mt-3 button-with-icon" // Add `btn-lg` for larger buttons
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        <img src={mapIcon} alt="Map Icon" className="button-icon" /> 
+        View on Google Maps
+    </a>
+
+    {!pothole.resolved && (
+        <button className="btn btn-outline-success btn-lg mt-3 button-with-icon" onClick={handleMarkAsResolved}>
+            <img src={resolveIcon} alt="Resolve Icon" className="button-icon" /> 
+            Mark as Resolved
+        </button>
+    )}
+</div>
+
           </div>
         )}
       </div>

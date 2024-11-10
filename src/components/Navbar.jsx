@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import '../CSS/navbar.css'; // Import the new CSS file
+import '../CSS/navbar.css';
+import Logo from '../assets/logo.png';
 
 function Navbar() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -23,6 +24,9 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
+      <a class="navbar-brand" href="#">
+      <img src={Logo} alt="Bootstrap"  height="24"/>
+    </a>
         <a className="navbar-brand" href="/">FixMyStreet</a>
         <button
           className="navbar-toggler"
@@ -39,13 +43,13 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link" href="/">Home</a>
+              <a className="nav-link" href="/landing">Home</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/project-report">Project Report</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/source-code">Source Code</a>
+              <a className="nav-link" href="https://github.com/arpitjha2511/FixMyStreet-Backend">Source Code</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/">Logout</a>

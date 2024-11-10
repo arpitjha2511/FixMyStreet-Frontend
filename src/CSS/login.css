@@ -87,13 +87,7 @@ body.login-page {
 }
 
 /* Button styles */
-.login-button {
-  background-color: #00b3b3; /* Default cyan color */
-  padding: 10px 20px; /* Add padding */
-  border: none; /* Remove border */
-  color: white; /* White text */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
-}
+
 
 .login-button:hover {
   background-color: #00b3b3; /* Darker cyan on hover */

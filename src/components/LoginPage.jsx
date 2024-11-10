@@ -13,7 +13,7 @@ function LoginPage() {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://pumped-enough-newt.ngrok-free.app/validateLogin', {
+      const response = await fetch('https://wildcat-mint-actually.ngrok-free.app/validateLogin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -42,10 +42,10 @@ function LoginPage() {
         <h5 className="login-subtitle">AI powered public infrastructure repair prioritization</h5>
         <div className="login-authors">
           <h4>Made by:</h4>
-          <h4>Arpit</h4>
-          <h4>Areen</h4>
-          <h4>Lakshit</h4>
-          <h4>Mohith</h4>
+          <h4>Arpit Jha (41)</h4>
+          <h4>Areen Chakraborty (53)</h4>
+          <h4>Lakshit Tandon (54)</h4>
+          <h4>Mohith Charagondla (55)</h4>
         </div>
       </div>
 

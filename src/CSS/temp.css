@@ -73,3 +73,22 @@ body {
 .card.neon-shadow:hover {
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.7), 0 0 30px rgba(0, 255, 255, 0.5); /* Neon glow on hover */
 }
+
+.button-container {
+  display: flex;
+  flex-direction: column; /* Stacks the buttons vertically */
+  gap: 1rem; /* Adds space between buttons */
+}
+
+.button-with-icon {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px; /* Adjust padding for larger buttons */
+  font-size: 1.2rem; /* Make the text larger */
+}
+
+.button-icon {
+  width: 20px; /* Set the icon size */
+  height: 20px;
+  margin-right: 10px; /* Space between icon and button text */
+}
