@@ -13,7 +13,7 @@ function LoginPage() {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://wildcat-mint-actually.ngrok-free.app/validateLogin', {
+      const response = await fetch('http://localhost:3000/validateLogin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -43,9 +43,9 @@ function LoginPage() {
         <div className="login-authors">
           <h4>Made by:</h4>
           <h4>Arpit Jha (41)</h4>
-          <h4>Areen Chakraborty (53)</h4>
           <h4>Lakshit Tandon (54)</h4>
           <h4>Mohith Charagondla (55)</h4>
+          <h4>Tanish Sunilkumar (56)</h4>
         </div>
       </div>
 

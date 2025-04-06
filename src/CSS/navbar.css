@@ -1,27 +1,40 @@
-/* Override styles specifically for the navbar */
-.navbar .navbar-collapse {
-    display: flex !important; /* Ensure flex display */
-    justify-content: space-between; /* Space between left and right items */
+/* Only force flex layout on large (>=992px) screens */
+@media (min-width: 992px) {
+  .navbar .navbar-collapse {
+    display: flex !important;
+    justify-content: space-between;
   }
   
   .navbar .navbar-nav {
-    margin-right: auto; /* Push the items to the left */
+    margin-right: auto;
   }
-  
-  .navbar .form-control {
-    width: auto; /* Prevent it from stretching */
+}
+
+/* Always allow the collapse plugin to do its thing on small screens */
+@media (max-width: 991.98px) {
+  .navbar .navbar-collapse {
+    /* remove any forced display so .collapse can hide/show */
+    display: none !important;
   }
-  
-  /* Additional styling to override global styles */
-  .login-page .navbar {
-    justify-content: flex-start; /* Align items to the start */
+  .navbar .navbar-collapse.show {
+    display: block !important;
   }
-  
-    /* Additional styling for the search input */
-    .form-control {
-        border: 2px solid #00d1d1; /* Teal border for the search input */
-        border-radius: 5px; /* Rounded corners */
-        padding: 10px; /* Add padding */
-        transition: border-color 0.3s ease; /* Smooth transition */
-      }
-  
+}
+
+/* Keep your search input from stretching */
+.navbar .form-control {
+  width: auto;
+}
+
+/* Teal styling for the search input */
+.form-control {
+  border: 2px solid #00d1d1;
+  border-radius: 5px;
+  padding: 10px;
+  transition: border-color 0.3s ease;
+}
+
+/* If you have a special “login-page” layout */
+.login-page .navbar {
+  justify-content: flex-start;
+}
