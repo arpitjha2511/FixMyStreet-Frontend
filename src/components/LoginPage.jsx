@@ -38,7 +38,7 @@ function LoginPage() {
       
       {/* Left Panel */}
       <div className="login-left">
-        <h1 className="login-title">FixMyStreet</h1>
+        <h1 className="login-title">FixMyStreet - Admin Panel</h1>
         <h5 className="login-subtitle">AI powered public infrastructure repair prioritization</h5>
         <div className="login-authors">
           <h4>Made by:</h4>
